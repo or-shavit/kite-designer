@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
       ? `Suggest 3 harmonious 3-color palettes for a delta kite design. User preference: "${preferences}". Respond with JSON only in this exact format: {"palettes":[{"label":"<evocative name>","colorA":"#RRGGBB","colorB":"#RRGGBB","colorC":"#RRGGBB"},...]}`
       : `Suggest 3 harmonious 3-color palettes for a delta kite design. Make them visually striking and varied. Respond with JSON only in this exact format: {"palettes":[{"label":"<evocative name>","colorA":"#RRGGBB","colorB":"#RRGGBB","colorC":"#RRGGBB"},...]}`;
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     const result = await model.generateContent(prompt);
     const text = result.response.text();
 
